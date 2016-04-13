@@ -1,0 +1,21 @@
+#<% require 'kitchen-sync' %>
+---
+driver:
+  name: vagrant
+  require_chef_omnibus: 12.8.1
+
+provisioner:
+  name: chef_zero
+  chef_omnibus_install_options: -d /tmp/vagrant-cache/vagrant_omnibus
+
+platforms:
+  - name: centos-7.2
+
+suites:
+  - name: nginx
+    run_list:
+      - recipe[bug::nginx]
+
+  - name: php
+    run_list:
+      - recipe[bug::php]

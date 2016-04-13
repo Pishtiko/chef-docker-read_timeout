@@ -1,0 +1,11 @@
+DEPENDENCIES
+  bug
+    path: .
+    metadata: true
+
+GRAPH
+  bug (0.0.1)
+    docker (~> 2.6.6)
+  compat_resource (12.9.1)
+  docker (2.6.6)
+    compat_resource (>= 12.9.0)
